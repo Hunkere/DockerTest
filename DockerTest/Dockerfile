@@ -5,7 +5,7 @@ EXPOSE 80
 FROM microsoft/dotnet:2.2-sdk AS build
 WORKDIR /src
 COPY ["DockerTest.csproj", "DockerTest/"]
-RUN dotnet restore "DockerTest.csproj"
+RUN dotnet restore "DockerTest/DockerTest.csproj"
 COPY . .
 WORKDIR "/src/DockerTest"
 RUN dotnet build "DockerTest.csproj" -c Release -o /app
